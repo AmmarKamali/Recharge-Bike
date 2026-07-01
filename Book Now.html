@@ -1,0 +1,350 @@
+
+
+
+
+
+
+
+<!DOCTYPE html> <html lang="en"> <head> <me... by Ammar Miakh
+09:53
+Ammar Miakh
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta ch<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recharge Bikes - Book a Bike</title>
+
+
+<style>
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f7f7f7;
+    color:#333;
+}
+
+
+/* Header */
+
+
+header{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+
+header h1{
+    font-size:40px;
+}
+
+
+/* Navigation */
+
+
+nav{
+    background:#34495e;
+    text-align:center;
+    padding:15px;
+}
+
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    font-size:18px;
+}
+
+
+nav a:hover{
+    background:#1abc9c;
+    border-radius:5px;
+}
+
+
+/* Banner */
+
+
+.hero{
+    background:#1abc9c;
+    color:white;
+    text-align:center;
+    padding:60px;
+}
+
+
+.hero h2{
+    font-size:40px;
+}
+
+
+.hero p{
+    font-size:20px;
+    margin-top:10px;
+}
+
+
+/* Booking Form */
+
+
+.container{
+    width:80%;
+    max-width:700px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 10px rgba(0,0,0,.2);
+}
+
+
+.container h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#2c3e50;
+}
+
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+
+button{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    border:none;
+    background:#1abc9c;
+    color:white;
+    font-size:18px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+
+button:hover{
+    background:#16a085;
+}
+
+
+#confirmation{
+    margin-top:20px;
+    display:none;
+    background:#d4edda;
+    color:#155724;
+    padding:20px;
+    border-radius:5px;
+    text-align:center;
+}
+
+
+/* Footer */
+
+
+footer{
+    margin-top:40px;
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+
+footer a{
+    color:#1abc9c;
+    text-decoration:none;
+}
+
+
+@media(max-width:768px){
+
+
+.container{
+    width:95%;
+}
+
+
+.hero h2{
+    font-size:30px;
+}
+
+
+}
+</style>
+
+
+</head>
+<body>
+
+
+<header>
+<h1>Recharge Bikes</h1>
+<p>Explore trails and nature with our E-Bikes!</p>
+</header>
+
+
+<nav>
+<a href="index.html">Home</a>
+<a href="Book Now.html">Book Now</a>
+<a href="contact.html">Contact Us</a>
+<a href="about-us.html">About Us</a>
+<a href="how-to-find-u.html">How To Find Us</a>
+<a href="login-test.html">Login</a>
+</nav>
+
+
+<section class="hero">
+<h2>Book Your Adventure</h2>
+<p>Reserve your E-Bike in just a few clicks.</p>
+</section>
+
+
+<div class="container">
+
+
+<h2>Bike Booking Form</h2>
+
+
+<form id="bookingForm">
+
+
+<label>Full Name</label>
+<input type="text" id="name" required>
+
+
+<label>Email Address</label>
+<input type="email" id="email" required>
+
+
+<label>Phone Number</label>
+<input type="tel" id="phone" required>
+
+
+<label>Select Bike</label>
+<select id="bike" required>
+<option value="">Choose a Bike</option>
+<option>Mountain E-Bike</option>
+<option>Trail E-Bike</option>
+<option>City E-Bike</option>
+<option>Family E-Bike</option>
+</select>
+
+
+<label>Hire Date</label>
+<input type="date" id="date" required>
+
+
+<label>Hire Duration</label>
+<select id="duration" required>
+<option value="">Select Duration</option>
+<option>Half Day</option>
+<option>1 Day</option>
+<option>2 Days</option>
+<option>Weekend</option>
+<option>1 Week</option>
+</select>
+
+
+<button type="submit">
+Book My Bike
+</button>
+
+
+</form>
+
+
+<div id="confirmation"></div>
+
+
+</div>
+
+
+<footer>
+
+
+<p>&copy; Recharge Bikes | All Rights Reserved</p>
+
+
+<p>
+Email: info@recharge-uk.com |
+Phone: 01422 800286
+</p>
+
+
+<p>
+<a href="#">Facebook</a> |
+<a href="#">Instagram</a> |
+<a href="#">X</a>
+</p>
+</footer>
+<script>
+ 
+ 
+document.getElementById("bookingForm").addEventListener("submit", function(event){
+ 
+ 
+event.preventDefault();
+ 
+ 
+let name=document.getElementById("name").value;
+let bike=document.getElementById("bike").value;
+let date=document.getElementById("date").value;
+let duration=document.getElementById("duration").value;
+ 
+ 
+document.getElementById("confirmation").style.display="block";
+ 
+ 
+document.getElementById("confirmation").innerHTML=
+"<h3>✅ Booking Successful!</h3>" +
+"<p>Thank you <strong>"+name+"</strong>.</p>" +
+"<p>Your <strong>"+bike+
+"</strong> has been reserved.</p>" +
+"<p>Date: <strong>"+date+
+"</strong></p>" +
+"<p>Duration: <strong>"+duration+
+"</strong></p>" +
+"<br><p>We look forward to seeing you at Recharge Bikes!</p>";
+ 
+ 
+this.reset();
+ 
+ 
+});
+ 
+ 
+</script>
+ 
+ 
+</body>
+</html>
+ 
+ 
+
